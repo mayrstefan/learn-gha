@@ -15,4 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
+      env:
+        v1: $ {{ secrets.MY_SECRET_VAR }}
+        v2: $ {{ secrets.MY_REPO_SECRET_VAR }}
+        v3: $ {{ context.MY_CONTEXT_VAR }}
+        v4: $ {{ MY_REPO_VAR }}
       run: ls -lA && source build.sh
