@@ -18,6 +18,6 @@ jobs:
       env:
         v1: ${{ secrets.MY_SECRET_VAR }}
         v2: ${{ secrets.MY_REPO_SECRET_VAR }}
-        v3: ${{ context.MY_CONTEXT_VAR }}
-        v4: ${{ MY_REPO_VAR }}
+        v3: ${{ vars.MY_CONTEXT_VAR }}
+        v4: ${{ vars.MY_REPO_VAR }}
       run: ls -lA && chmod +x build.sh && build.sh
